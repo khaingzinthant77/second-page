@@ -31,7 +31,7 @@ export default class App extends React.Component {
           </View>
         </View>
 
-        <View style={{ flex: 1 }}></View>
+        <View style={{ flex: 2 }}></View>
       </View>
     );
   }
@@ -55,10 +55,7 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 2,
-    paddingHorizontal: 20,
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    // marginHorizontal: 10
+    paddingHorizontal: 20,    
   },
   text: {
     fontSize: 20,
@@ -70,8 +67,6 @@ const styles = StyleSheet.create({
   flexcontainer: {
     flexDirection: "row",
     marginVertical:10,
-    alignItems:"flex-start",
-    justifyContent:"space-between"
   },
 
   box: {
@@ -80,7 +75,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#242132",
     alignItems: "flex-start",
     marginRight: 25,
-    // justifyContent:"space-evenly",
     borderRadius: 10,
     elevation: 15
   },
