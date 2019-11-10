@@ -5,33 +5,30 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{ flex: 1 }}>
-          <Image style={styles.image} source={require("./assets/back.png")} />
-        </View>
+        <Image style={styles.image} source={require("./assets/back.png")} />
+        <Text style={styles.text}>My Projects</Text>
         <View style={styles.body}>
-          <Text style={styles.text}>My Projects</Text>
-            <View style={styles.first}>
-              <View style={styles.box1}>
-                <Text style={styles.boxText1}>HR</Text>
-              </View>
-              <View style={styles.box2}>
-              <Text style={styles.boxText2}>Finance</Text>
-              </View>
+          <View style={styles.flexcontainer}>
+            <View style={styles.box}>
+              <Text style={styles.boxText}>HR</Text>
             </View>
-            <View style={styles.second}>
-              <View style={styles.box1}>
-              <Text style={styles.boxText1}>PM</Text>
-              </View>
-              <View style={styles.box2}>
-              <Text style={styles.boxText2}>UI/UX</Text>
-              </View>
+            <View style={styles.box}>
+              <Text style={styles.boxText}>Finance</Text>
             </View>
-            <View style={styles.third}>
-            <View style={styles.box1}>
-            <Text style={styles.boxText1}>Teaching</Text>
+          </View>
+          <View style={styles.flexcontainer}>
+            <View style={styles.box}>
+              <Text style={styles.boxText}>PM</Text>
             </View>
+            <View style={styles.box}>
+              <Text style={styles.boxText}>UI/UX</Text>
             </View>
-          
+          </View>
+          <View style={styles.flexcontainer}>
+            <View style={styles.box}>
+              <Text style={styles.boxText}>Teaching</Text>
+            </View>
+          </View>
         </View>
 
         <View style={{ flex: 1 }}></View>
@@ -44,7 +41,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "black",
-    flexDirection: "column"
+    flexDirection: "column",
+    paddingHorizontal: 20
   },
   image: {
     justifyContent: "flex-start",
@@ -52,70 +50,45 @@ const styles = StyleSheet.create({
     width: "10%",
     height: 30,
     marginHorizontal: 20,
-    marginTop: 50,
+    marginVertical:20,
     resizeMode: "contain"
   },
   body: {
-    flex: 4,
-    paddingHorizontal: 15,
+    flex: 2,
+    paddingHorizontal: 20,
     justifyContent: "space-between",
     alignItems: "flex-start",
+    // marginHorizontal: 10
   },
   text: {
     fontSize: 20,
     color: "white",
-    fontWeight:"bold",
-    marginBottom:10
+    fontWeight: "bold",
+    marginHorizontal: 15,
+    marginLeft: 20
   },
-  first: {
-    flex: 1,
-    // backgroundColor:"yellow",
-    width: "100%",
+  flexcontainer: {
     flexDirection: "row",
+    marginVertical:10,
+    alignItems:"flex-start",
+    justifyContent:"space-between"
   },
-  second: {
-    flex: 1,
-    width: "100%",
-    flexDirection: "row",
-  },
-  third: {
-    flex: 1,
-    width: "100%",
-    flexDirection: "row",  
-  },
-  box1: {
-    width: "47%",
-    height: 150,
+
+  box: {
+    width: "45%",
+    height: 130,
     backgroundColor: "#242132",
-    justifyContent: "space-between",
     alignItems: "flex-start",
-    marginRight: 20,
+    marginRight: 25,
+    // justifyContent:"space-evenly",
     borderRadius: 10,
-    elevation:15,
-    
+    elevation: 15
   },
-  box2: {
-    width: "47%",
-    height: 150,
-    backgroundColor: "#242132",
-    justifyContent: "center",
-    alignItems: "flex-end",
-    borderRadius: 10,
-    elevation:15
-  },
-  boxText1:{
-    marginTop:100,
-    alignSelf:"flex-start",
-    paddingHorizontal:20,
-    fontSize:17,
-    color:"white"
-  },
-  boxText2:{
-    marginTop:70,
-    alignSelf:"flex-start",
-    paddingHorizontal:20,
-    fontSize:17,
-    color:"white",
-    
+  boxText: {
+    marginTop: 70,
+    alignSelf: "flex-start",
+    paddingHorizontal: 20,
+    fontSize: 17,
+    color: "white"
   }
 });
